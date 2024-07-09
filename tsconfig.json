@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "lib": ["DOM", "ESNext"],
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "paths": {
       "@/*": ["./src/*"]
     },
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   }
 }

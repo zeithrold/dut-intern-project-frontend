@@ -1,27 +1,29 @@
 import React from 'react'
 import { Skeleton } from 'primereact/skeleton'
 import AnimatedNumber from 'react-animated-numbers'
+import type z from 'zod'
+import type { MetadataSchema } from '@/api/metadata'
 import { useCounts } from '@/api/metadata'
 
-function DocumentCount({ document }: { document: number, future: number }) {
+function DocumentCount({ company_count }: z.infer<typeof MetadataSchema>) {
   return (
     <div className="flex">
-      <span>共</span>
+      <span>来自共</span>
       <AnimatedNumber
         className="text-[var(--blue-500)] my-1 px-1 pr-2 bg-[var(--blue-100)] rounded-[var(--border-radius)] "
         transitions={index => ({
           ease: 'easeInOut',
           duration: index + 0.3,
         })}
-        animateToNumber={document}
+        animateToNumber={company_count}
         includeComma
       />
-      <span>个文档</span>
+      <span>个公司的</span>
     </div>
   )
 }
 
-function FutureCount({ future }: { document: number, future: number }) {
+function FutureCount({ future_count }: z.infer<typeof MetadataSchema>) {
   return (
     <div className="flex">
       <span>与</span>
@@ -31,7 +33,7 @@ function FutureCount({ future }: { document: number, future: number }) {
           ease: 'easeInOut',
           duration: index + 0.3,
         })}
-        animateToNumber={future}
+        animateToNumber={future_count}
         includeComma
       />
       <span>个期货数据。</span>
@@ -55,7 +57,7 @@ export default function Statistics() {
       <div>目前，</div>
       <div>管理系统已经收集</div>
       {
-        isLoading
+        isLoading || !data
           ? <CountSkeleton />
           : (
               <div>

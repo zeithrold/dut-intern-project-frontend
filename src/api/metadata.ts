@@ -1,19 +1,21 @@
 import useSWR from 'swr'
+import z from 'zod'
+import { createClient } from '.'
+
+const MetadataSchema = z.object({
+  company_count: z.number(),
+  future_count: z.number(),
+})
 
 function useCounts() {
-  return useSWR('/api/metadata', async (url) => {
-    // const response = await fetch(url);
-    // return response.json();
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    return {
-      // A test data
-      // TODO: Should be implemented by OpenAPI from backend
-      document: 300,
-      future: 1300,
-    }
+  return useSWR('/data/metadata', async (url) => {
+    const client = createClient()
+    const response = await client.get(url)
+    return MetadataSchema.parse(response.data)
   })
 }
 
 export {
   useCounts,
+  MetadataSchema,
 }

@@ -13,18 +13,21 @@
     "chart.js": "^4.4.3",
     "primeicons": "^7.0.0",
     "primereact": "^10.6.6",
+    "radash": "^12.1.0",
     "react": "^18.3.1",
     "react-animated-numbers": "^0.18.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.0",
     "styled-components": "^6.1.11",
-    "swr": "^2.2.5"
+    "swr": "^2.2.5",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.21.2",
     "@eslint-react/eslint-plugin": "^1.5.19",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
     "eslint": "^9.6.0",
     "eslint-plugin-format": "^0.1.2",
     "eslint-plugin-react-hooks": "^4.6.2",
