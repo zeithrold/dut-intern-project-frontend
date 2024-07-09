@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "packageManager": "yarn@1.22.22",
+  "source": "./src/static/index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@styled-icons/boxicons-regular": "^10.47.0",
+    "@styled-icons/boxicons-solid": "^10.47.0",
+    "axios": "^1.7.2",
+    "chart.js": "^4.4.3",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.6.6",
+    "react": "^18.3.1",
+    "react-animated-numbers": "^0.18.0",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0",
+    "styled-components": "^6.1.11",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.21.2",
+    "@eslint-react/eslint-plugin": "^1.5.19",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^9.6.0",
+    "eslint-plugin-format": "^0.1.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "parcel": "^2.12.0",
+    "postcss": "^8.4.39",
+    "postcss-custom-properties": "^13.3.11",
+    "postcss-url": "^10.1.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.2",
+    "usehooks-ts": "^3.1.0",
+    "vite": "^5.3.2",
+    "vite-tsconfig-paths": "^4.3.2"
+  }
+}
